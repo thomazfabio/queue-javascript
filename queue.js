@@ -16,7 +16,7 @@ class Queue {
     // Other methods
     peek() {
         if (this.isEmpty()) {
-            return undefined;
+            return true;
         }
         return this.count - this.lowestCount === 0;
     }
