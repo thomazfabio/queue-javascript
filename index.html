@@ -13,36 +13,71 @@
 
 <body>
     <div class="container">
-        <h1>Implementação de algoritimo para teste</h1>
-        <ol>
-            <li>
-                <h2>Criar uma fila</h2>
-                <p>Implementação de uma fila com as funções de adicionar, remover e listar os elementos.</p>
-                <input type="text" id="queue-name">
-                <button class="btn btn-primary onclick=" createQueue()">Criar fila</button>
-            </li>
-            <hr>
-            <li>
-                <h2>Inserir elemento na fila</h2>
-                <p>Implementação de uma fila com as funções de adicionar, remover e listar os elementos.</p>
-                <p>Insira um elemento na fila:</p>
-                <p>digite o nome da fila:</p>
-                <input type="text" id="queue-input-enqueue">
-                <p>Elemento: </p>
-                <input type="text" id="queue-input-element">
-                <button onclick="inserir()">Inserir elemento</button>
-            </li>
-            <hr>
-            <li>
-                <h2>Verificar se a fila esta vazia</h2>
-                <p>Implementação de uma fila com as funções de adicionar, remover e listar os elementos.</p>
-                <input type="text" id="queue-input-is-empty">
-                <button onclick="isEmpty()">Verificar se a fila esta vazia</button>
-                <p>resultado: </p>
-                <span id="queue-empty"></span>
-            </li>
-        </ol>
+        <h1 class="">Implementação de algoritimo Queue (fila)</h1>
     </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 border rounded-2" style="margin-right: 10px;">
+                <ol>
+                    <li>
+                        <h2>Criar uma fila</h2>
+                        <p>Implementação de uma fila com as funções de adicionar, remover e listar os elementos.</p>
+                        <div class="row">
+                            <div class="col-4">
+                                <input class="form-control" type="text" id="queue-name">
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-primary" onclick=" createQueue()">Criar fila</button>
+                            </div>
+                        </div>
+                    </li>
+                    <hr>
+                    <li>
+                        <h2>Inserir elemento na fila</h2>
+                        <p>Implementação de uma fila com as funções de adicionar, remover e listar os elementos.</p>
+                        <p>Insira um elemento na fila</p>
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="queue-input-enqueue">Fila:</label>
+                                <input class="form-control" type="text" id="queue-input-enqueue">
+                            </div>
+                            <div class="col-4">
+                                <label for="queue-input-element">Elemento:</label>
+                                <input class="form-control" type="text" id="queue-input-element">
+                            </div>
+                            <div class="col-4 align-self-end">
+                                <button class="btn btn-primary" onclick="inserir()">Inserir elemento</button>
+                            </div>
+                        </div>
+
+                    </li>
+                    <hr>
+                    <li>
+                        <h2>Verificar se a fila esta vazia</h2>
+                        <p>Implementação de uma fila com as funções de adicionar, remover e listar os elementos.</p>
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="queue-input-is-empty">Fila:</label>
+                                <input class="form-control" type="text" id="queue-input-is-empty">
+                            </div>
+                            <div class="col-4 align-self-end">
+                                <button class="btn btn-primary" onclick="isEmpty()">Verificar</button>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-md-6 border rounded-2">
+                <h1>Resultados</h1>
+                <div class="row">
+                    <div class="col-4">
+                        <h2>Fila</h2>
+                        <p id="queue-name-result"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
