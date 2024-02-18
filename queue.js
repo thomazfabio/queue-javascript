@@ -31,13 +31,12 @@ function createQueue() {
     let queueName = document.getElementById('queue-name').value
     queues[queueName] = new Queue();
     console.log(queues)
-    result()
 }
 
 async function isEmpty() {
     let queueName = document.getElementById('queue-input-is-empty').value
-    let result =  queues[queueName].peek()
-    document.getElementById('result').innerHTML = ""+result
+    queues[queueName].peek()
+    resultLog()
 }
 
 function inserir() {
@@ -47,9 +46,26 @@ function inserir() {
     console.log(queues)
 }
 
-async function result() {
-    let queueNameResult = document.getElementById('queue-name-result')
-    queueNameResult = JSON.stringify(queues)
-    queueNameResult.innerHTML = ""+queueNameResult
-    console.log(queueNameResult)
+function resultLog() {
+    let paragrafo = document.getElementById('queue-name-result')
+    paragrafo.innerHTML = JSON.stringify(queues)
+}
+
+function printQueue() {
+    slotResult = document.getElementById('queue-result')
+    let resultHtml = ''
+    for (let nameQueue in queues) {
+        console.log(nameQueue)
+        console.log(queues[nameQueue].items)
+        resultHtml += `<div class="container border mb-2"> <div class="row"> <div class="col-6"> <spam>Nome: ${nameQueue}  </spam> </div> 
+        <div class="col-3"> <spam>Contador: ${queues[nameQueue].count}</spam> </div>
+        <div class="col-3"> <span>Frente da fila: ${queues[nameQueue].lowestCount} </spam></div>
+        </div>
+        <div class="row">
+        <div class="col-12"> <spam>Elementos: ${JSON.stringify(queues[nameQueue].items)} </spam> </div>
+        </div>
+        </div>`
+    }
+
+    slotResult.innerHTML = resultHtml
 }
